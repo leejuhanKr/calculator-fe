@@ -1,0 +1,187 @@
+* {
+  box-sizing:border-box;
+  color: white;
+  opacity: 97%;
+}
+
+.calculator {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap : nowrap;
+  background-color: rgb(84,80,84);
+  box-shadow: 0px 0px 20px black;
+}
+
+.window-control__btn__area {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+  /* background-color: aliceblue; */
+}
+
+button[class|="window-control"] {
+  color: rgb(122,120,123);
+  background-color: rgb(102,100,103);
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.result-display__area {
+  position: relative;
+
+}
+
+.calculator__display--for-advanced{
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  width: 95%;
+  font-family: 'Heebo', sans-serif;
+  font-size: 70px;
+  text-align: right;
+}
+
+.result-display__area {
+  width: 100%;
+  flex-grow: 1;
+  font-size: 30px;
+}
+
+.calculator__display--bare {
+  display: None;
+}
+
+.input-btn__area {
+  width: 100%;
+  height: 358px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-btn__area>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-btn__area>div>button:not([class*="operator"]) {
+  margin-right: 2px;
+}
+
+.input-btn__area>div:not([class$="end"]) {
+  margin-bottom: 2px;
+}
+
+.input-btn__area>div>button {
+  border: 0;
+  padding: 0;
+  width: 86px;
+  height: 70px;
+}
+
+.input-btn__area>div>button.zero {
+  width: 174px;
+  border-bottom-left-radius: 15px;
+}
+
+.input-btn__area>div>button.operator__equal{
+  border-bottom-right-radius: 15px;
+}
+
+.calculator {
+  border-radius: 15px;
+}
+
+/* font */
+.input-btn__area button{
+  font-family: 'Heebo', sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.window-control__btn__area button {
+  padding: 0;
+  font-size: 17px;
+}
+
+/* 버튼 색상,효과*/
+button.control-key {
+  background-color: rgb(102,100,103);
+}
+
+button[class^="number"] {
+  background-color: rgb(129,126,128);
+}
+
+button[class*="operator"] {
+  background-color: rgb(242,163,60);
+}
+
+.calculator:hover button.window-control--close {
+  color: rgb(237, 106, 94);;
+  background-color: rgb(237, 106, 94);
+  transition: 0.3s;
+}
+
+.calculator:hover button.window-control--minimizing {
+  color: rgb(245, 191, 79);
+  background-color: rgb(245, 191, 79);
+  transition: 0.3s;
+}
+
+.calculator:hover button.window-control--maximizing {
+  color: rgb(97, 195, 83);
+  background-color: rgb(97, 195, 83);
+  transition: 0.3s;
+}
+
+.window-control__btn__area:hover>button.window-control--close {
+  color: rgb(143, 18, 29);
+  transition: 0.2s;
+}
+
+.window-control__btn__area:hover>button.window-control--minimizing {
+  color: rgb(169, 114, 41);
+  transition: 0.2s;
+}
+
+.window-control__btn__area:hover>button.window-control--maximizing {
+  color:rgb(45, 103, 27);
+  transition : 0.2s; 
+}
+
+.window-control__btn__area button.window-control--close:active {
+  background-color: rgb(240,147,137);
+}
+
+.window-control__btn__area button.window-control--minimizing:active {
+  background-color:rgb(252,234,125);
+}
+
+.window-control__btn__area button.window-control--maximizing:active {
+  background-color: rgb(143,240,125);
+}
+
+.input-btn__area button:not([class|="operator"]):active {
+  filter: brightness(130%);
+}
+
+.input-btn__area button[class^="operator"]:active {
+  filter: brightness(70%);
+}
+
+/* 계산기 외부 설정 */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
